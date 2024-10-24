@@ -53,6 +53,26 @@ public class CatalogoServiceImpl implements CatalogoService {
     return libro;
   }
 
+  @Override
+  public List<Libro> getAllBooksRegistered() {
+    return libroRepository.findAll();
+  }
+
+  @Override
+  public List<Autor> getAllAuthorRegistered() {
+    return autorRepository.findAll();
+  }
+
+  @Override
+  public List<Autor> getAllAuthorLivesByYear(Integer year) {
+    return autorRepository.findAutorsByBirthDate(year);
+  }
+
+  @Override
+  public List<Libro> getAllBooksByLanguage(String language) {
+    return libroRepository.findLibrosByLanguage(language);
+  }
+
   private Optional<BookData> getBookDataApi(String title) {
     List<BookData> bookData =
         consumer.getData(PARAM_SEARCH + title.replace(" ", "+"), Data.class).results();
