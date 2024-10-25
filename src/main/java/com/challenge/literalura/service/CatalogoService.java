@@ -15,4 +15,10 @@ public interface CatalogoService {
   List<Autor> getAllAuthorLivesByYear(Integer year);
 
   List<Libro> getAllBooksByLanguage(String language);
+
+  List<Libro> get10BooksByDownloads();
+
+  Autor getAutorByName(String name);
+
+  List<Autor> getAllAuthorDeadsByYear(Integer year);
 }

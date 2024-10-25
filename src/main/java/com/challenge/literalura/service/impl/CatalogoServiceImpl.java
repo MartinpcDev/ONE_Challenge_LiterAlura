@@ -9,6 +9,7 @@ import com.challenge.literalura.persistence.repository.AutorRepository;
 import com.challenge.literalura.persistence.repository.LibroRepository;
 import com.challenge.literalura.service.CatalogoService;
 import com.challenge.literalura.service.Consumer;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +72,26 @@ public class CatalogoServiceImpl implements CatalogoService {
   @Override
   public List<Libro> getAllBooksByLanguage(String language) {
     return libroRepository.findLibrosByLanguage(language);
+  }
+
+  @Override
+  public List<Libro> get10BooksByDownloads() {
+    List<Libro> libros = getAllBooksRegistered();
+    return libros.stream()
+        .sorted(Comparator.comparing(Libro::getDownloads).reversed())
+        .limit(10)
+        .toList();
+  }
+
+  @Override
+  public Autor getAutorByName(String name) {
+    Optional<Autor> autorExists = autorRepository.findByNameContainsIgnoreCase(name);
+    return autorExists.orElse(null);
+  }
+
+  @Override
+  public List<Autor> getAllAuthorDeadsByYear(Integer year) {
+    return autorRepository.findAutorsByDeathDate(year);
   }
 
   private Optional<BookData> getBookDataApi(String title) {

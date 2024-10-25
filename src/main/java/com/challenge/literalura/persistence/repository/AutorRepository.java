@@ -10,4 +10,6 @@ public interface AutorRepository extends JpaRepository<Autor, Long> {
   Optional<Autor> findByNameContainsIgnoreCase(String name);
 
   List<Autor> findAutorsByBirthDate(Integer birthdate);
+
+  List<Autor> findAutorsByDeathDate(Integer deathDate);
 }
