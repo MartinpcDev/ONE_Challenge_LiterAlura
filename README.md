@@ -2,7 +2,7 @@
 
 Catálogo de libros donde los usuarios pueden registrar libros en una base de datos y consultar
 información sobre los libros registrados. El desarrollo se enfoca en el uso de Java, Spring y
-MySQL, destacando el uso de Spring Data JPA para la persistencia de datos y la integración con
+PostgreSQL, destacando el uso de Spring Data JPA para la persistencia de datos y la integración con
 APIs externas como Gutendex.
 
 ## Características principales
@@ -13,12 +13,16 @@ APIs externas como Gutendex.
 * Listado de todos los libros registrados.
 * Visualización de autores y listado de autores vivos por año.
 * Búsqueda de libros por idioma.
+* Generar estadisticas con base en las descargas
+* Listar Top 10 libros Registrados
+* Buscar Autor por nombre
+* Visualización de autores y listado de autores fallecidos por año.
 * Opción para salir de la aplicación.
 
 ### Tecnologías utilizadas
 
 * Backend: Java y Spring (con énfasis en Spring Boot y Spring Data JPA).
-* Base de datos: MySQL para gestionar la información.
+* Base de datos: PostgreSQL para gestionar la información.
 * API externa: Solo la funcionalidad de búsqueda inicial consulta datos de una API externa; las
   demás operaciones trabajan directamente con la base de datos.
 
