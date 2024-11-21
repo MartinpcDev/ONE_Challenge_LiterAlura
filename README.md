@@ -32,3 +32,9 @@ APIs externas como Gutendex.
 
 *Este proyecto combina persistencia de datos con la integración de APIs y proporciona un entorno
 práctico para consolidar tus conocimientos en Java y desarrollo backend con Spring.*
+
+## Badge del Challenge
+
+<div align="center">
+  <img src="src/main/resources/static/badge_literalura.png" alt="badge">
+</div>
