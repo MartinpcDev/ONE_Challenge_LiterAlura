@@ -25,6 +25,7 @@ APIs externas como Gutendex.
 * Base de datos: PostgreSQL para gestionar la información.
 * API externa: Solo la funcionalidad de búsqueda inicial consulta datos de una API externa; las
   demás operaciones trabajan directamente con la base de datos.
+* Docker
 
 ### Modo de interacción
 

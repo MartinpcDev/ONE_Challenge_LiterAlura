@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class APIconsumer implements Consumer {
 
-  @Value("${ntegration.api.base-path}")
+  @Value("${integration.api.base-path}")
   private String BASE_URL;
   private final DataConverter dataConverter = new DataConverter();
 

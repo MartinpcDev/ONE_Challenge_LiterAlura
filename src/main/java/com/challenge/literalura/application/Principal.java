@@ -22,9 +22,13 @@ public class Principal {
     System.out.println("Menu de opciones");
     Boolean salir = false;
     while (!salir) {
-      int opcion = showMenu(consola);
-      salir = execOptions(opcion, consola, catalogoService);
-      System.out.println();
+      try {
+        int opcion = showMenu(consola);
+        salir = execOptions(opcion, consola, catalogoService);
+        System.out.println();
+      } catch (Exception e) {
+        System.out.println("Ocurrio un error: " + e.getMessage());
+      }
     }
   }
 
